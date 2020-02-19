@@ -17,12 +17,10 @@ class RichCardsBot extends DialogBot {
             for (let cnt = 0; cnt < membersAdded.length; cnt++) {
                 if (membersAdded[cnt].id !== context.activity.recipient.id) {
                     const reply = MessageFactory.text('Welcome to CardBot. ' +
-                        'This bot will show you different types of Rich Cards. ' +
                         'Please type anything to get started.');
                     await context.sendActivity(reply);
                 }
             }
-
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
